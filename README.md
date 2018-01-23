@@ -1,15 +1,15 @@
-# Mmdb
+# MaxMindDB
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/mmdb`. To experiment with that code, run `bin/console` for an interactive prompt.
+The purpose of this gem is to implement the [MaxMindDB File Format](http://maxmind.github.io/MaxMind-DB/) in Ruby. 
 
-TODO: Delete this and the text above, and describe your gem
+The gem is highly influenced by the implementation of the [MaxMindDB gem](https://github.com/yhirose/maxminddb) and I have to give a lot of credit to that project.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'mmdb'
+gem 'pure_mmdb'
 ```
 
 And then execute:
@@ -18,11 +18,24 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install mmdb
+    $ gem install pure_mmdb
 
 ## Usage
 
-TODO: Write usage instructions here
+1. Configure the gem:
+
+	```ruby
+	Mmdb.configure do |c|
+		c.file_path = '/path/to/db.mmdb'
+	end
+	```
+1. Lookup IP's
+
+	```ruby
+	> Mmdb.lookup('192.168.1.1')
+	#=> { "data" => "value" }
+	```
+
 
 ## Development
 
@@ -40,4 +53,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Mmdb project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/mmdb/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Mmdb project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/trevorrjohn/mmdb/blob/master/CODE_OF_CONDUCT.md).
