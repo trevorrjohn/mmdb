@@ -1,0 +1,81 @@
+{
+  "city":{
+    "geoname_id":643492,
+    "names":{
+      "de":"Oulu",
+      "en":"Oulu",
+      "es":"Oulu",
+      "fr":"Oulu",
+      "ja":"オウル",
+      "pt-BR":"Oulu",
+      "ru":"Оулу",
+      "zh-CN":"奥卢"
+    }
+  },
+  "continent":{
+    "code":"EU",
+    "geoname_id":6255148,
+    "names":{
+      "de":"Europa",
+      "en":"Europe",
+      "es":"Europa",
+      "fr":"Europe",
+      "ja":"ヨーロッパ",
+      "pt-BR":"Europa",
+      "ru":"Европа",
+      "zh-CN":"欧洲"
+    }
+  },
+  "country":{
+    "geoname_id":660013,
+    "iso_code":"FI",
+    "names":{
+      "de":"Finnland",
+      "en":"Finland",
+      "es":"Finlandia",
+      "fr":"Finlande",
+      "ja":"フィンランド共和国",
+      "pt-BR":"Finlândia",
+      "ru":"Финляндия",
+      "zh-CN":"芬兰"
+    }
+  },
+  "location":{
+    "accuracy_radius":1,
+    "latitude":65.0167,
+    "longitude":25.4667,
+    "time_zone":"Europe/Helsinki"
+  },
+  "postal":{
+    "code":"90100"
+  },
+  "registered_country":{
+    "geoname_id":660013,
+    "iso_code":"FI",
+    "names":{
+      "de":"Finnland",
+      "en":"Finland",
+      "es":"Finlandia",
+      "fr":"Finlande",
+      "ja":"フィンランド共和国",
+      "pt-BR":"Finlândia",
+      "ru":"Финляндия",
+      "zh-CN":"芬兰"
+    }
+  },
+  "subdivisions":[
+    {
+      "geoname_id":830667,
+      "iso_code":"14",
+      "names":{
+        "de":"Nordösterbotten",
+        "en":"Northern Ostrobothnia",
+        "es":"Ostrobotnia del Norte",
+        "fr":"Ostrobotnie du Nord",
+        "ja":"北ポフヤンマー県",
+        "pt-BR":"Ostrobótnia do Norte",
+        "ru":"Северная Остроботния"
+      }
+    }
+  ]
+}

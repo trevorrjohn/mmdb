@@ -1,0 +1,10 @@
+{
+  "is_anonymous": true,
+  "is_anonymous_vpn": false,
+  "is_hosting_provider": false,
+  "is_public_proxy": true,
+  "is_tor_exit_node": false,
+  "isp": "TOT",
+  "score": 100,
+  "vpn_service_name": ""
+}
