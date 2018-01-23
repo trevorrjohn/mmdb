@@ -1,6 +1,7 @@
 # MaxMindDB
 
 [![Gem Version](https://badge.fury.io/rb/pure_mmdb.svg)](https://badge.fury.io/rb/pure_mmdb)
+[![Build Status](https://travis-ci.org/trevorrjohn/mmdb.svg?branch=master)](https://travis-ci.org/trevorrjohn/mmdb)
 [![Maintainability](https://api.codeclimate.com/v1/badges/7eb3d3e1389a8c16a2da/maintainability)](https://codeclimate.com/github/trevorrjohn/mmdb/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/7eb3d3e1389a8c16a2da/test_coverage)](https://codeclimate.com/github/trevorrjohn/mmdb/test_coverage)
 
