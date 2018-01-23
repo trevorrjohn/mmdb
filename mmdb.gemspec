@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "mmdb/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "mmdb"
+  spec.name          = "pure_mmdb"
   spec.version       = Mmdb::VERSION
   spec.authors       = ["Trevor John"]
   spec.email         = ["trevor@john.tj"]
