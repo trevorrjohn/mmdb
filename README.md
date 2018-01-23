@@ -1,5 +1,9 @@
 # MaxMindDB
 
+[![Gem Version](https://badge.fury.io/rb/pure_mmdb.svg)](https://badge.fury.io/rb/pure_mmdb)
+[![Maintainability](https://api.codeclimate.com/v1/badges/7eb3d3e1389a8c16a2da/maintainability)](https://codeclimate.com/github/trevorrjohn/mmdb/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/7eb3d3e1389a8c16a2da/test_coverage)](https://codeclimate.com/github/trevorrjohn/mmdb/test_coverage)
+
 The purpose of this gem is to implement the [MaxMindDB File Format](http://maxmind.github.io/MaxMind-DB/) in Ruby. 
 
 The gem is highly influenced by the implementation of the [MaxMindDB gem](https://github.com/yhirose/maxminddb) and I have to give a lot of credit to that project.
