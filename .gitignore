@@ -11,3 +11,5 @@
 .rspec_status
 
 spec/data/GeoLite*.mmdb
+
+*.gem
