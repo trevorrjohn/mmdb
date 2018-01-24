@@ -17,19 +17,28 @@ module Mmdb
 
     def reset
       @config = Configuration.new
-      @db = nil
+      @databases = nil
     end
 
-    def query(ip)
-      Query.new(db: db, ip: ip).fetch
+    def query(ip, file_key: Configuration::DEFAULT_FILE_KEY)
+      Query.new(db: db_for_key(file_key), ip: ip).fetch
     end
 
     private
 
-    attr_reader :db
+    attr_reader :databases
 
-    def db
-      @db ||= DB.new(config.file_path)
+    def db_for_key(file_key)
+      databases[file_key].tap do |db|
+        raise DatabaseNotFound if db.nil?
+      end
+    end
+
+    def databases
+      @databases ||=
+        config.files.map do |key, file_path|
+          [key, DB.new(file_path)]
+        end.to_h
     end
   end
 end
