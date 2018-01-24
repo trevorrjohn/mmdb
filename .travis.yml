@@ -16,4 +16,7 @@ script:
   - bundle exec rake
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-
+notifications:
+  email:
+    on_success: never # default: change
+    on_failure: always # default: always
