@@ -3,7 +3,6 @@
 [![Gem Version](https://badge.fury.io/rb/pure_mmdb.svg)](https://badge.fury.io/rb/pure_mmdb)
 [![Build Status](https://travis-ci.org/trevorrjohn/mmdb.svg?branch=master)](https://travis-ci.org/trevorrjohn/mmdb)
 [![Maintainability](https://api.codeclimate.com/v1/badges/7eb3d3e1389a8c16a2da/maintainability)](https://codeclimate.com/github/trevorrjohn/mmdb/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/7eb3d3e1389a8c16a2da/test_coverage)](https://codeclimate.com/github/trevorrjohn/mmdb/test_coverage)
 
 The purpose of this gem is to implement the [MaxMindDB File Format](http://maxmind.github.io/MaxMind-DB/) in Ruby. 
 
@@ -27,20 +26,34 @@ Or install it yourself as:
 
 ## Usage
 
-1. Configure the gem:
+### Configuration
 
-	```ruby
-	Mmdb.configure do |c|
-		c.file_path = '/path/to/db.mmdb'
-	end
-	```
-1. Lookup IP's
+To configure the gem, simply set the `file_path` in the configure block.
 
-	```ruby
-	> Mmdb.lookup('192.168.1.1')
-	#=> { "data" => "value" }
-	```
+```ruby
+Mmdb.configure do |c|
+  c.file_path = '/path/to/db.mmdb'
+end
+Mmdb.query('192.168.1.1')
+#=> { 'data' => 'hash' }
+```
 
+### Multiple Database Files
+
+If you need to have multiple database files you can query each file individually after specifying the files. You can configure as many database files as you like. The database will only be loaded into memory once it is queried.
+
+```ruby
+Mmdb.configure do |c|
+  c.files = {
+    vpn: 'path to vpn.mmdb',
+    location: 'path to location.mmdb'
+  }
+end
+Mmdb.lookup('192.168.1.1', file_key: :vpn)
+#=> { 'data' => 'vpn data' }
+Mmdb.lookup('192.168.1.1', file_key: :location)
+#=> { 'data' => 'location data' }
+```
 
 ## Development
 
