@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    pure_mmdb (0.2.0)
+    pure_mmdb (0.3.1)
 
 GEM
   remote: https://rubygems.org/
