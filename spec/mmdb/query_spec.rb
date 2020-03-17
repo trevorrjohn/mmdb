@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Mmdb::Query, '#fetch' do
   context 'when the query ip is not a valid ip' do
     it 'raises IPAddr::AddressFamilyError' do
@@ -19,7 +21,7 @@ RSpec.describe Mmdb::Query, '#fetch' do
       db = instance_double Mmdb::DB, query: result
       ip = '192.168.1.1'
       expect(Mmdb::Query.new(db: db, ip: ip).fetch).to eq result
-      expect(db).to have_received(:query).with(3232235777)
+      expect(db).to have_received(:query).with(3_232_235_777)
     end
   end
 
@@ -30,7 +32,7 @@ RSpec.describe Mmdb::Query, '#fetch' do
       ip = '2001:708:510:8:9a6:442c:f8e0:7133'
       expect(Mmdb::Query.new(db: db, ip: ip).fetch).to eq result
       expect(db).to have_received(:query)
-        .with(42540630774235136446847854956926497075)
+        .with(42_540_630_774_235_136_446_847_854_956_926_497_075)
     end
   end
 end

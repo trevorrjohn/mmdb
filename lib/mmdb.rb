@@ -1,11 +1,13 @@
-require "mmdb/configuration"
-require "mmdb/db"
-require "mmdb/decoder"
-require "mmdb/query"
-require "mmdb/version"
+# frozen_string_literal: true
+
+require 'mmdb/configuration'
+require 'mmdb/db'
+require 'mmdb/decoder'
+require 'mmdb/query'
+require 'mmdb/version'
 
 module Mmdb
-  class DatabaseNotFound < RuntimeError ; end
+  class DatabaseNotFound < RuntimeError; end
 
   class << self
     attr_reader :config
@@ -26,19 +28,12 @@ module Mmdb
 
     private
 
-    attr_reader :databases
-
     def db_for_key(file_key)
-      databases[file_key].tap do |db|
-        raise DatabaseNotFound if db.nil?
-      end
+      databases.fetch(file_key) { raise DatabaseNotFound }
     end
 
     def databases
-      @databases ||=
-        config.files.map do |key, file_path|
-          [key, DB.new(file_path)]
-        end.to_h
+      @databases ||= Hash[config.files.map { |k, f| [k, DB.new(f)] }]
     end
   end
 end

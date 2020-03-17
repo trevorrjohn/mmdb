@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Mmdb
   class Configuration
     DEFAULT_FILE_KEY = :file

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Mmdb::Configuration do
   context 'with single file' do
     it 'allows you to set a signle file_path' do

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Mmdb
   class Decoder
     def initialize(data)
@@ -9,6 +11,7 @@ module Mmdb
         begin
           index = data.rindex(METADATA_BEGIN)
           raise InvalidFileFormat if index.nil?
+
           decode(position: index + METADATA_BEGIN.size, base: 0).value
         end
     end
@@ -18,15 +21,15 @@ module Mmdb
     end
 
     def ip_version
-      metadata["ip_version"]
+      metadata['ip_version']
     end
 
     def node_count
-      metadata["node_count"]
+      metadata['node_count']
     end
 
     def node_byte_size
-      @node_byte_size ||= metadata["record_size"] * 2 / 8
+      @node_byte_size ||= metadata['record_size'] * 2 / 8
     end
 
     def search_tree_size
@@ -122,8 +125,8 @@ module Mmdb
     attr_reader :data
 
     METADATA_BEGIN = ([0xAB, 0xCD, 0xEF].pack('C*') + 'MaxMind.com').encode('ascii-8bit', 'ascii-8bit')
-    SIZE_BASE_VALUES = [0, 29, 285, 65821].freeze
-    POINTER_BASE_VALUES = [0, 0, 2048, 526336].freeze
+    SIZE_BASE_VALUES = [0, 29, 285, 65_821].freeze
+    POINTER_BASE_VALUES = [0, 0, 2048, 526_336].freeze
     Node = Struct.new(:position, :value)
     TYPES = [
       EXTENDED_TYPE        = 0,
